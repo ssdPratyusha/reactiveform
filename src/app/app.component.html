@@ -1,0 +1,49 @@
+<div class="container">
+   
+    <div class="jumbotron" class="col-10">
+<h1>Reactiveform</h1>
+
+<form [formGroup]="form16">
+ <label >Firstname </label>
+<input type="text" class="form-control" formControlName="Firstname" placeholder="Enter first name" >
+
+           
+            <div style="color:red" *ngIf='form16.controls.Firstname.touched && form16.controls.Firstname.invalid'>
+                <p *ngIf='form16.controls.Firstname.errors.required'>firstname is required</p>
+                  <p *ngIf='form16.controls.Firstname.errors.pattern'>firstname is invalid</p>
+              </div> 
+   
+            
+<label >LastName </label>
+<input type="text"   class="form-control" formControlName="LastName" placeholder="Enter Last name" >
+<div style="color:red" *ngIf='form16.controls.LastName.touched && form16.controls.LastName.invalid'>
+    <p *ngIf='form16.controls.LastName.errors.required'>LastName is required</p>
+      <p *ngIf='form16.controls.LastName.errors.pattern'>LastName is invalid</p>
+  </div> 
+
+<label >Email ID </label>
+<input type="Email"   class="form-control" formControlName="EmailID" placeholder="Enter Email Id"  required  > 
+<div style="color:red" *ngIf='form16.controls.EmailID.touched && form16.controls.EmailID.invalid'>
+    <p *ngIf='form16.controls.EmailID.errors.required'>EmailID is required</p>
+      <p *ngIf='form16.controls.EmailID.errors.pattern'>EmailID is invalid</p>
+  </div> 
+
+<label >DOB </label>
+<input type="date"  class="form-control" formControlName="DOB"  placeholder="Enter date of birth" max='{{idate}}'>
+ <div style="color:red" *ngIf='form16.controls.DOB.touched && form16.controls.DOB.invalid'>
+    <p *ngIf='form16.controls.DOB.errors.required'>DOB is required</p>
+      <p *ngIf='form16.controls.DOB.errors.pattern'>DOB is invalid</p>
+  </div> 
+<label >Phone Number </label>
+<input type="text"   class="form-control" formControlName="PhoneNumber" placeholder="EnterPhone number"> 
+<div style="color:red" *ngIf='form16.controls.PhoneNumber.touched && form16.controls.PhoneNumber.invalid'>
+    <p *ngIf='form16.controls.PhoneNumber.errors.required'>PhoneNumber is required</p>
+      <p *ngIf='form16.controls.PhoneNumber.errors.pattern'>PhoneNumber is invalid</p>
+  </div> <br>
+<button  class="btn btn-success">submit</button>
+</form>   
+</div>
+</div>
+
+
+
